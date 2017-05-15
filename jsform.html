@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="jsformjs.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="jsformstyle.css">
+
+	<title>Form</title>
+</head>
+<body>
+
+	<div class="container">
+		<form name="myForm" novalidate>
+
+			<div class="row">
+				<div class="form-group col-md-5 col-xs-10" id="fname">
+					<label for "first">First Name</label>
+					<input type="text" name="first" id="first" placeholder="First Name" class="form-control" onchange = "validfname()">
+					<p class="help-block" id = "frequired" >This field is required</p>
+					<p class="help-block" id = "fonly-letters" >First name should contain only letters</p>
+					<p class="help-block" id = "fmin2" >First Name should too short</p>
+				</div>
+
+				<div class="form-group col-md-5 col-xs-10" id="lname">
+					<label for "Last">Last Name</label>
+					<input type="text" name="last" id="last" placeholder="Last Name" class="form-control" onchange = "validlname()">
+					<p class="help-block" id = "lrequired" >This field is required</p>
+					<p class="help-block" id = "lonly-letters" >Last name should contain only letters</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-5 col-xs-10" id="pno">
+					<label for "phno">Phone Number</label>
+					<input type="text" name="phno" id="phno" placeholder="Phone Number" class="form-control" onchange="validphno()">
+					<p class="help-block" id = "prequired" >This field is required</p>
+					<p class="help-block" id = "only-numbers" >Phone Number should contain only numbers</p>
+					<p class="help-block" id = "dig10" >Phone number should have 10 digits</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-5 col-xs-10" id = "mail">
+					<label for "email">Email id</label>
+					<input type="email" name="email" id="email" placeholder="Email id" class="form-control" onchange="validemail()">
+					<p class="help-block" id = "erequired" >This field is required</p>
+					<p class="help-block" id = "etype">Email invalid</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-5 col-xs-10">
+					<label for="state">State</label>
+			      	<select class="form-control" name="state">
+				        <option>Tamil Nadu</option>
+				        <option>Kerala</option>
+				        <option>Andhra Pradesh</option>
+				        <option>Karnataka</option>
+			     	</select>
+				</div>
+			</div>	
+
+			<div class="row" id = "pamatch">
+				<div class="form-group col-md-5 col-xs-10" id =  "pgroup">
+					<label for "pass">Password</label>
+					<input type="Password" name="pass" id="pass" placeholder="Password" class="form-control" onchange="passvalid()">
+					<p class="help-block seen">Password should contain atleast 1 upper case, 1 lower case, 1 number, 1 special character</p>
+					<p class="help-block seen">Password should have 6-15 characters</p>
+					<p class="help-block" id = "passrequired" >This field is required</p>
+					<p class="help-block" id = "pattern">Password should match the required pattern</p>
+					<p class="help-block" id = "short">Password too short</p>
+					<p class="help-block" id = "long">Password too long</p>
+				</div>
+
+				<div class="form-group col-md-5 col-xs-10">
+					<label for "cpass">Confirm Password</label>
+					<input type="Password" name="cpass" id = "cpass" placeholder="Re-enter password" class="form-control" onchange="matchpass()">
+					<p class="help-block" id = "match">Passwords do not match</p>
+				</div>
+			</div>	
+
+			<div class="row">
+				<div class="form-group col-md-2 col-xs-2 col-md-offset-4 col-xs-offset-5">
+					<button type = "button"  id = "submit" class="btn btn-primary form-control" onclick="submitter()">Submit</button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+
+
+</body>
+</html>
